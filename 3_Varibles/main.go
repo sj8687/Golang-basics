@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	// var name string = "golang"
+	var name string = "golang"
 
 	// infer
-	// var name = "golang"
+	 name = "golangg"
 	// var isAdult bool = true
 
 	// var age int = 30
@@ -14,8 +14,8 @@ func main() {
 	// shorthand syntax
 	// name := "golang"
 
-	var name string
-	name = "golang"
+	// var name string
+	// name = "golang"
 
 	// var price float32 = 50.5
 	// var price = 50.5
