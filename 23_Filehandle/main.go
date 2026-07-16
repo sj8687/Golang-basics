@@ -1,32 +1,39 @@
-// package main
+package main
 
 
-// import (
-// 	"fmt"
-// 	"os"
-// )
+import (
+	"fmt"
+	"os"
+)
 
 
-// func main() {
-// 	data, err := os.ReadFile("example.txt")
-// 	if err != nil {
-// 		panic(err)
-// 	}
+func main() {
+	data, err := os.ReadFile("example.txt")
+	if err != nil {
+		panic(err)
+	}
 
-// 	fmt.Println(string(data))
+	fmt.Println(string(data))
 
 
-// 	fileInfo, err := os.Stat("example.txt")
-// 	if err != nil {
-// 		// log the error
-// 		panic(err)
-// 	}
+	// fileInfo, err := os.Stat("example.txt")
+	// if err != nil {
+	// 	// log the error
+	// 	panic(err)
+	// }
 
-// 	fmt.Println("file name:", fileInfo.Name())
-// 	fmt.Println("file or folder:", fileInfo.IsDir())
-// 	fmt.Println("file size:", fileInfo.Size())
-// 	fmt.Println("file permission:", fileInfo.Mode())
-// 	fmt.Println("file modified at:", fileInfo.ModTime())
+	newData := []byte("Hello, Go!")
+
+	err = os.WriteFile("example.txt", newData, 0644)
+	if err != nil {
+		panic(err)
+	}
+
+	// fmt.Println("file name:", fileInfo.Name())
+	// fmt.Println("file or folder:", fileInfo.IsDir())
+	// fmt.Println("file size:", fileInfo.Size())
+	// fmt.Println("file permission:", fileInfo.Mode())
+	// fmt.Println("file modified at:", fileInfo.ModTime())
 
 
 	
@@ -139,12 +146,7 @@
 
 // 	// fmt.Println(" file deleted successfully")
 
-// }
-
-
-
-
-
+}
 
 
 
@@ -155,28 +157,28 @@
 //creating file
 
 
-package main
+// package main
 
-import (
-	"io"
-	"os"
-)
+// import (
+// 	"io"
+// 	"os"
+// )
 
-func main() {
-	src, err := os.Open("example.txt")
-	if err != nil {
-		panic(err)
-	}
-	defer src.Close()
+// func main() {
+// 	src, err := os.Open("example.txt")
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// 	defer src.Close()
 
-	dst, err := os.Create("destination.txt")
-	if err != nil {
-		panic(err)
-	}
-	defer dst.Close()
+// 	dst, err := os.Create("destination.txt")
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// 	defer dst.Close()
 
-	_, err = io.Copy(dst, src)
-	if err != nil {
-		panic(err)
-	}
-}
+// 	_, err = io.Copy(dst, src)
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// }
